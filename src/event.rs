@@ -57,7 +57,7 @@ pub trait DomainEvent:
 ///
 /// Thus an `EventEnvelope` provides a uniqueness value along with an event `payload` and
 /// `metadata`.
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub struct EventEnvelope<A>
 where
     A: Aggregate,
