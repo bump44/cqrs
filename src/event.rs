@@ -2,7 +2,7 @@ use std::collections::HashMap;
 use std::fmt;
 
 use serde::de::DeserializeOwned;
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use crate::aggregate::Aggregate;
 
@@ -57,7 +57,7 @@ pub trait DomainEvent:
 ///
 /// Thus an `EventEnvelope` provides a uniqueness value along with an event `payload` and
 /// `metadata`.
-#[derive(Debug, Serialize)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct EventEnvelope<A>
 where
     A: Aggregate,
